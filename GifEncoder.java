@@ -127,6 +127,10 @@ public class AnimatedGifEncoder {
 	        // use first frame's size
 	        setSize(im.getWidth(), im.getHeight());
 	      }
+	      if(image != null) {
+	      	// recycle the old Bitmap instance to free its memory
+	      	image.recycle();
+	      }
 	      image = im;
 	      getImagePixels(); // convert to correct format if necessary
 	      analyzePixels(); // build color table & map pixels
